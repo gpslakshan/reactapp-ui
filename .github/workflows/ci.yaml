@@ -50,7 +50,7 @@ jobs:
         run: |
           git config --global user.email "ci@example.com"
           git config --global user.name "CI-Bot"
-          git clone https://${{ secrets.GH_PAT }}@github.com/gpslakshan/reactapp-manifests.git
+          git clone https://${{ secrets.GH_PAT }}@github.com/nikolavrtikola/reactapp-manifests.git
           cd reactapp-manifests
           # Use 'sed' to update the image tag in your deployment file
           sed -i "s|image: ${{ secrets.DOCKERHUB_USERNAME }}/reactapp-ui:.*|image: ${{ secrets.DOCKERHUB_USERNAME }}/reactapp-ui:${{ github.sha }}|g" deployment.yaml
